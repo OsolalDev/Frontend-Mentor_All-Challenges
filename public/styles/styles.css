@@ -17,7 +17,7 @@
     --htmlColor: #ff8a9c;
     --cssColor: #acc0ff;
     --jsColor: #ffeb56;
-    --testColor: #00f2ff;
+    --cyanColor: #00f2ff;
 }
 
 /* GENERAL */
@@ -41,6 +41,27 @@ body {
     margin: 0;
 }
 
+/* Scrollbar */
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f5acff32;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--cyanColor);
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #00f2ffa6;
+  }
+
 /* SOCIAL NETWORK */
 .social-network_container {
     width: 100%;
@@ -57,11 +78,13 @@ body {
     transition: 0.3s;
 }
 
-.social-network-link:hover {
+.social-network-link:hover,
+.social-network-link:focus {
     scale: 1.1;
 }
 
-.social-network-link:hover path {
+.social-network-link:hover path, 
+.social-network-link:focus path {
     fill: #00f2ff;
 }
 
@@ -102,7 +125,8 @@ body {
     transition: 0.3s;
 }
 
-.each_challenge:hover {
+.each_challenge:hover, 
+.each_challenge:focus {
     scale: 1.05;
 }
 
@@ -150,7 +174,8 @@ body {
     transition: 0.3s;
 }
 
-.challenge_github-link:hover {
+.challenge_github-link:hover,
+.challenge_github-link:focus {
     -webkit-box-shadow: 10px 10px 10px -12px rgba(46,2,73,1);
     -moz-box-shadow: 10px 10px 10px -12px rgba(46,2,73,1);
     box-shadow: 10px 10px 10px -12px rgba(46,2,73,1);
@@ -185,7 +210,8 @@ body {
     gap: 0.3rem;
 }
 
-.challenge_live-site:hover {
+.challenge_live-site:hover, 
+.challenge_live-site:focus {
     color: black;
     font-weight: bold;
     filter: invert(69%) sepia(21%) saturate(3241%) hue-rotate(137deg) brightness(108%) contrast(104%);
@@ -197,6 +223,9 @@ body {
 
 .challenge_description {
     width: 85%;
+    padding: 0 0.5rem;
+    height: 200px;
+    overflow-y: auto;
     text-align: justify;
 }
 
@@ -279,7 +308,8 @@ footer .social-network_container {
 
 @media (max-width: 800px) {
     .footer_sign {
-        flex-direction: column;
-        gap: 2rem;
+        margin-top: 2rem;
+        flex-direction: column-reverse;
+        gap: 1rem;
     }
 }
